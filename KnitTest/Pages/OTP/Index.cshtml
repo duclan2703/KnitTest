@@ -1,0 +1,46 @@
+﻿@page
+@model KnitTest.Pages.OTP.GetOTPModel
+@{
+}
+
+<div class="form-group">
+    <input type="text" class="form-control" id="email" placeholder="Enter your email">
+    <button type="button" id="submit">Get OTP</button>
+</div>
+
+<div id="showmodal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <input type="text" class="form-control" id="otpcode" placeholder="Enter OTP code" onkeyup="validateOTP()">
+    </div>
+</div>
+
+@section Scripts{
+    <script>
+        $("#submit").click(function () {
+            $.ajax({
+                url: "https://localhost:7272/otp/getotp",
+                method: "post",
+                data: {
+                    "email": $("#email").val(),
+                },
+                success: function (result) {
+                    console.log(result);
+                    if (result.includes("invalid")){
+                        alert(result);
+                    }
+                    else{
+                        $("#showmodal").modal("show");
+                    }
+                }
+            });
+        })
+
+        function validateOTP(){
+            let otp = document.getElementById("otpcode").value;
+            let email = document.getElementById("email").value;
+            if (otp.lenght == 6) {
+                window.location.href = 'https://localhost:7272/otp/checkotp?otpcode=' + otp + '&email=' + email;
+            }
+        }
+    </script>
+}
