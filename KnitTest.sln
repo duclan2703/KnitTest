@@ -5,6 +5,10 @@ VisualStudioVersion = 17.5.33414.496
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KnitTest", "KnitTest\KnitTest.csproj", "{8CD3D9BC-CF41-4AB5-A361-B611DEDCC056}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OTPModule", "OTPModule\OTPModule.csproj", "{ABAF8DFD-D118-4C25-B48F-77C72C8BE700}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{789DB37B-01ED-4745-B911-D2ADC17F40FB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{8CD3D9BC-CF41-4AB5-A361-B611DEDCC056}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8CD3D9BC-CF41-4AB5-A361-B611DEDCC056}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8CD3D9BC-CF41-4AB5-A361-B611DEDCC056}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABAF8DFD-D118-4C25-B48F-77C72C8BE700}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABAF8DFD-D118-4C25-B48F-77C72C8BE700}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABAF8DFD-D118-4C25-B48F-77C72C8BE700}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABAF8DFD-D118-4C25-B48F-77C72C8BE700}.Release|Any CPU.Build.0 = Release|Any CPU
+		{789DB37B-01ED-4745-B911-D2ADC17F40FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{789DB37B-01ED-4745-B911-D2ADC17F40FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{789DB37B-01ED-4745-B911-D2ADC17F40FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{789DB37B-01ED-4745-B911-D2ADC17F40FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
