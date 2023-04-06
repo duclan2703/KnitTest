@@ -1,7 +1,7 @@
-﻿using KnitTest.Constants;
+﻿using OTPModule.Constants;
 using System.ComponentModel.DataAnnotations;
 
-namespace KnitTest.Entities
+namespace OTPModule.Entities
 {
     public class OTPCheck
     {

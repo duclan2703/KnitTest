@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace KnitTest.Entities
+namespace OTPModule.Entities
 {
     public class OTPContext : DbContext
     {

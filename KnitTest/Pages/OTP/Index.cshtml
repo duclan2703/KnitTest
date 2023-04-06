@@ -7,10 +7,18 @@
     <input type="text" class="form-control" id="email" placeholder="Enter your email">
     <button type="button" id="submit">Get OTP</button>
 </div>
+<div id="modal" class="form-group" hidden>
+</div>
 
-<div id="showmodal" class="modal fade" tabindex="-1" role="dialog">
-    <div class="modal-dialog">
-        <input type="text" class="form-control" id="otpcode" placeholder="Enter OTP code" onkeyup="validateOTP()">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="otpcode" placeholder="Enter OTP code">
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -25,22 +33,48 @@
                 },
                 success: function (result) {
                     console.log(result);
-                    if (result.includes("invalid")){
+                    if (result.includes("invalid")) {
                         alert(result);
                     }
-                    else{
-                        $("#showmodal").modal("show");
+                    else {
+                        $("#exampleModal").modal("show");
                     }
                 }
-            });
-        })
+            })
+        });
 
-        function validateOTP(){
-            let otp = document.getElementById("otpcode").value;
-            let email = document.getElementById("email").value;
-            if (otp.lenght == 6) {
-                window.location.href = 'https://localhost:7272/otp/checkotp?otpcode=' + otp + '&email=' + email;
+        var retry = 1;
+        $("#otpcode").keyup(function () {
+            console.log(retry);
+            var otp = $("#otpcode").val();
+            console.log(otp);
+            if (otp.length > 5) {
+                $.ajax({
+                    url: "https://localhost:7272/otp/checkotp",
+                    method: "post",
+                    data: {
+                        "otpcode": otp,
+                        "email": $("#email").val(),
+                        "attempts": retry
+                    },
+                    success: function (result) {
+                        console.log(result);
+                        while(retry < 10){
+                            if (result.includes("retry")) {
+                                retry++;
+                                alert(result);
+                            }
+                            else{
+                                alert(result);
+                            }
+                        }
+                        if (result.includes("retry")) {
+                            alert("Your OTP is timeout");
+                        }
+                    }
+                });
             }
-        }
+        });
+
     </script>
 }

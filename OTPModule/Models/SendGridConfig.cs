@@ -1,4 +1,4 @@
-﻿namespace KnitTest.Models
+﻿namespace OTPModule.Models
 {
     public class SendGridConfig
     {

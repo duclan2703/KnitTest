@@ -1,4 +1,4 @@
-﻿namespace KnitTest.Constants
+﻿namespace OTPModule.Constants
 {
     public enum EmailStatus
     {

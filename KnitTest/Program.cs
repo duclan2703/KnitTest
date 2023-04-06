@@ -1,6 +1,6 @@
-using KnitTest.Entities;
-using KnitTest.Models;
-using KnitTest.Services;
+using OTPModule.Entities;
+using OTPModule.Models;
+using OTPModule.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

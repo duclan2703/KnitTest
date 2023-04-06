@@ -1,8 +1,9 @@
-﻿using KnitTest.Constants;
-using KnitTest.Entities;
+﻿using OTPModule.Constants;
+using OTPModule.Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
-namespace KnitTest.Services
+namespace OTPModule.Services
 {
     public interface IOTPService
     {
