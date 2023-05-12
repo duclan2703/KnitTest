@@ -17,7 +17,7 @@ namespace OTPModule.Utils
     public class OTPUtil
     {
         private readonly IOptions<SendGridConfig> _options;
-        private const string EMAIL_REGEX = @"^[a-zA-Z0-9._%+-]+@dso\.org\.sg$";
+        private const string EMAIL_REGEX = @"^[a-zA-Z0-9._+-]+@dso\.org\.sg$";
 
         public OTPUtil(IOptions<SendGridConfig> options)
         {

@@ -15,11 +15,9 @@ namespace OTPModule.Services
     public class OTPService : IOTPService
     {
         private readonly OTPContext _context;
-        private readonly ILogger<OTPService> _logger;
-        public OTPService(OTPContext context, ILogger<OTPService> logger)
+        public OTPService(OTPContext context)
         {
             _context = context;
-            _logger = logger;
         }
         public async Task<OTPCheck> GetOTP(string otpcode, string email)
         {
@@ -41,7 +39,6 @@ namespace OTPModule.Services
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, ex.Message);
                 return false;
             }
 
@@ -63,7 +60,6 @@ namespace OTPModule.Services
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, ex.Message);
                 return false;
             }
 

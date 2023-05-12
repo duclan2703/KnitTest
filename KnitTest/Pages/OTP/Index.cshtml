@@ -59,16 +59,12 @@
                     },
                     success: function (result) {
                         console.log(result);
-                        while(retry < 10){
-                            if (result.includes("retry")) {
-                                retry++;
-                                alert(result);
-                            }
-                            else{
-                                alert(result);
-                            }
-                        }
+
                         if (result.includes("retry")) {
+                            retry++;
+                            alert(result);
+                        }
+                        if (result.includes("timeout") || retry == 10) {
                             alert("Your OTP is timeout");
                         }
                     }
